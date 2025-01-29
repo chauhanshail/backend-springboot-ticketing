@@ -1,5 +1,4 @@
 package propejct.demo.com.example.demo.controller;
-
 import propejct.demo.com.example.demo.model.User;
 import propejct.demo.com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,11 +8,10 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/users")
-public class UserController {
 
+public class UserController {
     @Autowired
     private UserService userService;
-
     /**
      * POST endpoint to sign up a user.
      * URL: POST /api/users/signup
@@ -24,7 +22,6 @@ public class UserController {
         User savedUser = userService.signUpUser(user);
         return ResponseEntity.ok(savedUser);
     }
-
     /**
      * POST endpoint to login a user.
      * URL: POST /api/users/login
@@ -40,7 +37,6 @@ public class UserController {
                     .body("Invalid email or password");
         }
     }
-
     /**
      * GET endpoint to retrieve user by ID.
      * URL: GET /api/users/{id}
